@@ -1,0 +1,12 @@
+fastapi==0.110.0
+uvicorn==0.28.0
+asyncpg==0.28.0  # PostgreSQL异步驱动
+qdrant-client==1.7.0  # Qdrant客户端
+openai==1.13.3  # OpenAI SDK
+anthropic==0.21.0  # Anthropic SDK
+geopandas==0.14.0  # 地理数据处理
+shapely==2.0.3  # 地理几何计算
+pyproj==3.6.1  # 坐标系转换
+python-jose==3.3.0  # JWT认证
+python-multipart==0.0.9  # 文件上传
+python-dotenv==1.0.1  # 环境变量管理

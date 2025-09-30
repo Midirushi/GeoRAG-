@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgis/postgis:15-3.3
+    environment:
+      - POSTGRES_DB=spatiotemporal_rag
+      - POSTGRES_USER=postgres  # 自定义用户名
+      - POSTGRES_PASSWORD=123456  # 自定义密码
+    ports:
+      - "5432:5432"  # 宿主机端口:容器端口
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant_data:/qdrant/storage
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+volumes:
+  postgres_data:
+  qdrant_data:
+  redis_data:
